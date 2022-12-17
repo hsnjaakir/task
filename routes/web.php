@@ -18,4 +18,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/posts',[PostController::class, 'showAllPost']);
+Route::get('/posts',[PostController::class, 'showAllPost'])->name('posts');

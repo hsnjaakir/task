@@ -54,7 +54,7 @@
                 </form>
                 <hr style="width:100%;">
             </div>
-
+            <h2>{{[$data][0]['message']}}</h2>
             <table class="table table-striped">
 
                 <tr>
