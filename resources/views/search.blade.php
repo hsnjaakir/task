@@ -54,21 +54,77 @@
                 </form>
                 <hr style="width:100%;">
             </div>
+
             <table class="table table-striped">
+
                 <tr>
-                    <th>User Id</th>
-                    <th>Id</th>
-                    <th>Title</th>
-                    <th>Body</th>
+                    <th>FLIGHT</th>
+                    <th>AIRCRAFT</th>
+                    <th>CLASS</th>
+                    <th>FARE</th>
+                    <th>ROUTE</th>
+                    <th>DEPARTURE</th>
+                    <th>ARRIVAL</th>
+                    <th>DURATION</th>
+                    <th>PRICE</th>
                 </tr>
-                @foreach($data as $row)
+                
                 <tr>
-                    <td>{{ $row['userId'] }}</td>
-                    <td>{{ $row['id'] }}</td>
-                    <td>{{ $row['title'] }}</td>
-                    <td>{{ $row['body'] }}</td>
+                    <td>
+                        {{ [$data][0]['flightOffer'][0]['itineraries'][0]['segments'][0]['carrierCode'] }}
+                        {{ [$data][0]['flightOffer'][0]['itineraries'][0]['segments'][0]['aircraft'] }}
+                        <br>
+                        {{ [$data][0]['flightOffer'][0]['itineraries'][0]['segments'][1]['carrierCode'] }}
+                        {{ [$data][0]['flightOffer'][0]['itineraries'][0]['segments'][1]['aircraft'] }}
+                    </td>
+
+                    <td>
+                        {{ [$data][0]['flightOffer'][0]['itineraries'][0]['segments'][0]['flightNumber'] }}
+                        <br>
+                        {{ [$data][0]['flightOffer'][0]['itineraries'][0]['segments'][1]['flightNumber'] }}
+                    </td>
+
+                    <td>
+                        {{ [$data][0]['flightOffer'][0]['class'][0][0] }}
+                        <br>
+                        {{ [$data][0]['flightOffer'][0]['class'][0][1] }}
+                    </td>
+
+                    <td>
+                        {{ [$data][0]['flightOffer'][0]['fareBasis'][0][0] }}
+                        <br>
+                        {{ [$data][0]['flightOffer'][0]['fareBasis'][0][1] }}
+                    </td>
+
+                    <td>
+                        {{ [$data][0]['flightOffer'][0]['itineraries'][0]['segments'][0]['departure']['iataCode'] }}
+                        <span>-</span>
+                        {{ [$data][0]['flightOffer'][0]['itineraries'][0]['segments'][0]['arrival']['iataCode'] }}
+                        <br>
+                        {{ [$data][0]['flightOffer'][0]['itineraries'][0]['segments'][1]['departure']['iataCode'] }}
+                        <span>-</span>
+                        {{ [$data][0]['flightOffer'][0]['itineraries'][0]['segments'][1]['arrival']['iataCode'] }}
+                    </td>
+
+                    <td>
+                        {{ [$data][0]['flightOffer'][0]['itineraries'][0]['segments'][0]['departure']['at'] }}
+                        <br>
+                        {{ [$data][0]['flightOffer'][0]['itineraries'][0]['segments'][1]['departure']['at'] }}
+                    </td>
+
+                    <td>
+                        {{ [$data][0]['flightOffer'][0]['itineraries'][0]['segments'][0]['arrival']['at'] }}
+                        <br>
+                        {{ [$data][0]['flightOffer'][0]['itineraries'][0]['segments'][1]['arrival']['at'] }}
+                    </td>
+
+                    <td>{{ [$data][0]['flightOffer'][0]['itineraries'][0]['duration'] }}</td>
+
+                    <td>{{ [$data][0]['flightOffer'][0]['price'] }} <br> <button class="btn btn-primary">Select</button> </td>
                 </tr>
-                @endforeach
+                
+                
+
             </table>
         </div>
     </div>
