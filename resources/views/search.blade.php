@@ -68,7 +68,7 @@
             <h5>{{[$data][0]['message']}}</h5>
 
             <table style="width:100%;">
-                <tr>
+                <tr style="background-color: #f2f2f2;">
                     <th>FLIGHT</th>
                     <th>AIRCRAFT</th>
                     <th>CLASS</th>
