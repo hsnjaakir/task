@@ -48,12 +48,11 @@
                         </select>
                         <select>
                             <option value=""> 1 </option>
-                            <option value=""> 2 </option>
                         </select>
                     </div>
                     <hr>
-                    <div>
-                        <input type="submit" value="Search" class="btn btn-secondary">
+                    <div align="right">
+                        <input type="submit" value="Search" class="btn btn-primary">
                     </div>
                 </form>
                 <hr style="width:100%;">

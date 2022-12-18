@@ -12,7 +12,7 @@ class PostController extends Controller
         // $data = Http::get('https://jsonplaceholder.typicode.com/posts');
         $data = File::get(storage_path('whatever/LHR_CDG_ADT1_TYPE_1.txt'));
         $data = json_decode($data, TRUE);
-        // dd($data);
+        // {{dd($data)}}
         return view('search', compact('data'));
         
     }
