@@ -83,26 +83,8 @@
                 <tbody>
 
                     @foreach($data['flightOffer'] as $key=>$value)
+                    @foreach($value['fareBasis'] as $keys=>$fareBasis)
                     <tr>
-
-                        @foreach($value['fareBasis'] as $keys=>$fareBasis)
-                        {{-- @foreach($value['itineraries'] as  $b)--}}
-                        {{-- @foreach($b['segments'] as  $d)--}}
-
-
-                        {{-- <td>{{$d['marketingCarrier']." ".$d['aircraft']}}</td>--}}
-                        {{-- <td>{{$d['flightNumber']}}</td>--}}
-                        {{-- <td>{{$value['class'][0][$keys]}}</td>--}}
-                        {{-- <td>{{$fareBasis[$keys]}}</td>--}}
-                        {{-- <td>{{$d['departure']['iataCode']}}-{{$d['arrival']['iataCode']}}</td>--}}
-                        {{-- <td>{{$d['departure']['at']}}</td>--}}
-                        {{-- <td>{{$d['arrival']['at']}}</td>--}}
-                        {{-- <td>{{$b['duration']}}</td>--}}
-                        {{-- <td>{{$value['price']}}</td>--}}
-
-                        {{-- @endforeach--}}
-                        {{-- @endforeach--}}
-                        {{-- @endforeach--}}
                         <td>
                             @foreach($value['itineraries'] as $b)
                             @foreach($b['segments'] as $d)
