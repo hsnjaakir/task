@@ -35,10 +35,10 @@
                         <input type="text" placeholder="CDG"><br>
                         <input type="date"><br>
                         <select>
-                            <option value=""> Day+ </option>
+                            <option value=""> Day- </option>
                         </select>
                         <select>
-                            <option value=""> Day- </option>
+                            <option value=""> Day+ </option>
                         </select>
                         <select>
                             <option value=""> Anytime </option>
