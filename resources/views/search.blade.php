@@ -3,6 +3,7 @@
 
 <head>
     <title>Laravel</title>
+    <!-- @vite('resources/css/app.css') -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <style>
         select {
@@ -132,7 +133,6 @@
                     
                 </tbody>
             </table>
-            <!-- {{dd($data)}} -->
         </div>
     </div>
 </body>
