@@ -21,7 +21,10 @@
   "directories": {
     "test": "tests"
   },
+<<<<<<< HEAD
   "dependencies": {},
+=======
+>>>>>>> f85da729f8c3ae2de7bc5e01cf31e57a18ff9dde
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hsnjaakir/task.git"
