@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+     @vite('resources/js/app.js')
 
     <title>Laravel</title>
 
@@ -31,24 +32,24 @@
                 <hr style="width:100%;">
                 <form action="{{Route('posts')}}" method="GET">
                     <div style="width:100%; display:flex">
-                        <input type="text" placeholder="LHR"><br>
-                        <input type="text" placeholder="CDG"><br>
-                        <input type="date"><br>
-                        <select>
-                            <option value=""> Day+ </option>
-                        </select>
-                        <select>
+                        <input class="border" type="text" placeholder="LHR"><br>
+                        <input class="border" type="text" placeholder="CDG"><br>
+                        <input class="border" type="date"><br>
+                        <select class="border">
                             <option value=""> Day- </option>
                         </select>
-                        <select>
+                        <select class="border">
+                            <option value=""> Day+ </option>
+                        </select>
+                        <select class="border">
                             <option value=""> Anytime </option>
                         </select> <span style="padding:10px 4px 4px 4px">+</span>
-                        <select>
+                        <select class="border">
                             <option value=""> ADT </option>
                         </select>
-                        <select>
+                        <select class="border">
                             <option value=""> 1 </option>
-                        </select>
+                        </select> <span style="padding:10px 4px 4px 4px">+</span>
                     </div>
                     <hr>
                     <div align="right">

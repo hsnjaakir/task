@@ -3,6 +3,7 @@
 
 <head>
     <title>Laravel</title>
+    @vite('resources/js/app.js')
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <style>
         select {
@@ -39,24 +40,24 @@
                 <hr style="width:100%;">
                 <form action="" method="GET">
                     <div style="width:100%; display:flex">
-                        <input type="text" placeholder="LHR"><br>
-                        <input type="text" placeholder="CDG"><br>
-                        <input type="date"><br>
-                        <select>
-                            <option value=""> Day+ </option>
-                        </select>
-                        <select>
+                        <input class="border" type="text" placeholder="LHR"><br>
+                        <input class="border" type="text" placeholder="CDG"><br>
+                        <input class="border" type="date"><br>
+                        <select class="border">
                             <option value=""> Day- </option>
                         </select>
-                        <select>
+                        <select class="border">
+                            <option value=""> Day+ </option>
+                        </select>
+                        <select class="border">
                             <option value=""> Anytime </option>
                         </select> <span style="padding:10px 4px 4px 4px">+</span>
-                        <select>
+                        <select class="border">
                             <option value=""> ADT </option>
                         </select>
-                        <select>
+                        <select class="border">
                             <option value=""> 1 </option>
-                        </select>
+                        </select> <span style="padding:10px 4px 4px 4px">+</span>
                     </div>
                     <hr>
                     <div align="right">
@@ -82,68 +83,54 @@
 
                 <tbody>
 
-                    @foreach($data['flightOffer'] as $key=>$value)
-                    @foreach($value['fareBasis'] as $keys=>$fareBasis)
+                    @foreach($data['flightOffer'] as $flightOffer)
+                    
                     <tr>
+                        @foreach($flightOffer['itineraries'] as $itineraries)
                         <td>
-                            @foreach($value['itineraries'] as $b)
-                            @foreach($b['segments'] as $d)
-                            {{$d['marketingCarrier']." ".$d['aircraft']}}<br>
-                            @endforeach
+                            @foreach($itineraries['segments'] as $segments)
+                            {{$segments['marketingCarrier']." ".$segments['aircraft']}}<br>
                             @endforeach
                         </td>
                         <td>
-                            @foreach($value['itineraries'] as $b)
-                            @foreach($b['segments'] as $d)
-                            {{$d['flightNumber']}}<br>
-                            @endforeach
+                            @foreach($itineraries['segments'] as $segments)
+                            {{$segments['flightNumber']}}<br>
+                            @endforeach 
+                        </td>
+                        <td>
+                            @foreach($flightOffer['fareBasis'][0] as $keys=>$fareBasis)
+                            {{$flightOffer['class'][0][$keys]}}<br>
                             @endforeach
                         </td>
                         <td>
-                            @foreach($value['itineraries'] as $b)
-                            @foreach($b['segments'] as $d)
-                            {{$value['class'][0][$keys]}}<br>
-                            @endforeach
+                            @foreach($flightOffer['fareBasis'][0] as $keys=>$fareBasis)
+                            {{$fareBasis}}<br>
                             @endforeach
                         </td>
                         <td>
-                            @foreach($value['itineraries'] as $b)
-                            @foreach($b['segments'] as $d)
-                            {{$fareBasis[$keys]}}.<br>
-                            @endforeach
+                            @foreach($itineraries['segments'] as $segments)
+                            {{$segments['departure']['iataCode']}}-{{$segments['arrival']['iataCode']}}<br>
                             @endforeach
                         </td>
                         <td>
-                            @foreach($value['itineraries'] as $b)
-                            @foreach($b['segments'] as $d)
-                            {{$d['departure']['iataCode']}}-{{$d['arrival']['iataCode']}}<br>
-                            @endforeach
+                            @foreach($itineraries['segments'] as $segments)
+                            {{$segments['arrival']['at']}}<br>
                             @endforeach
                         </td>
                         <td>
-                            @foreach($value['itineraries'] as $b)
-                            @foreach($b['segments'] as $d)
-                            {{$d['arrival']['at']}}<br>
-                            @endforeach
+                            @foreach($itineraries['segments'] as $segments)
+                            {{$segments['arrival']['at']}}<br>
                             @endforeach
                         </td>
                         <td>
-                            @foreach($value['itineraries'] as $b)
-                            @foreach($b['segments'] as $d)
-                            {{$d['arrival']['at']}}<br>
-                            @endforeach
-                            @endforeach
+                            {{$itineraries['duration']}}<br>
                         </td>
-                        <td>
-                            @foreach($value['itineraries'] as $da)
-                            {{$da['duration']}}<br>
-                            @endforeach
-                        </td>
-                        <td>{{$value['price']}}<br> <button class="btn btn-primary">Select</button></td>
+                        <td>{{$flightOffer['price']}}<br> <button class="btn btn-primary">Select</button></td>
+                        @endforeach
                     </tr>
+                    
                     @endforeach
-                    @endforeach
-
+                    
                 </tbody>
             </table>
         </div>

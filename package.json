@@ -1,14 +1,36 @@
 {
-    "private": true,
-    "scripts": {
-        "dev": "vite",
-        "build": "vite build"
-    },
-    "devDependencies": {
-        "axios": "^1.1.2",
-        "laravel-vite-plugin": "^0.7.0",
-        "lodash": "^4.17.19",
-        "postcss": "^8.1.14",
-        "vite": "^3.0.0"
-    }
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.13",
+    "axios": "^1.1.2",
+    "laravel-mix": "^6.0.49",
+    "laravel-vite-plugin": "^0.7.3",
+    "lodash": "^4.17.19",
+    "postcss": "^8.4.20",
+    "tailwindcss": "^3.2.4",
+    "vite": "^4.0.3"
+  },
+  "name": "larasearch",
+  "description": "1. Clone this repository to your local machine. 2. Go to the folder application using cd command on your cmd or terminal 3. Run 'composer install' on your cmd or terminal 4. Copy .env.example file to .env on the root folder. You can type copy .env.example .env if using command prompt Windows 5. Open your .env file and change the database name (DB_DATABASE) to whatever you have, username (DB_USERNAME) and password (DB_PASSWORD) field correspond to your configuration. 6. Run 'php artisan key:generate' 7. Run 'php artisan migrate' 8. Run 'php artisan serve' 9. Go to http://localhost:8000/ 10. Click on the search button to see the parsed data",
+  "version": "1.0.0",
+  "main": "postcss.config.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hsnjaakir/task.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hsnjaakir/task/issues"
+  },
+  "homepage": "https://github.com/hsnjaakir/task#readme"
 }
