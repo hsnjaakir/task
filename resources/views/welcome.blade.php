@@ -8,7 +8,6 @@
 
     
     <title>Laravel</title>
-     @vite('resources/css/app.css')
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <style>
@@ -39,14 +38,6 @@
                         <input class="border" type="date"><br>
                         <select class="border">
                             <option value=""> Day- </option>
-                        <input type="text" placeholder="LHR"><br>
-                        <input type="text" placeholder="CDG"><br>
-                        <input type="date"><br>
-                        <select>
-                            <option value=""> Day- </option>
-                        </select>
-                        <select>
-                            <option value=""> Day+ </option>
                         </select>
                         <select class="border">
                             <option value=""> Day+ </option>
